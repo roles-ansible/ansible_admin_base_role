@@ -1,5 +1,41 @@
 ---
-- name: run optional versionscheck
+- name: 'run optional versionscheck'
   ansible.builtin.include_tasks: versioncheck.yml
   when: submodules_versioncheck|bool
 
+- name: 'merge local admin list with additional admins'
+  ansible.builtin.set_fact:
+    merged_admins: "{{ default_admins + local_admins }}"
+
+- name: 'set facts for included roles'
+  ansible.builtin.set_fact:
+    admins: "{{ merged_admins | map(attribute='name') | list }}"
+    _accounts: "{{ merged_admins | map(attribute='name') | list }}"
+    cacheable: true
+
+- name: 'merge unpriveledged accounts'
+  ansible.builtin.set_fact:
+    accounts: "{{ _accounts + local_accounts }}"
+
+- name: 'extract ssh keys for access'
+  ansible.builtin.set_fact:
+    _keymap: "{{ _keymap | default({}) | combine({ item.name : item.pubkeys }) }}"
+  with_items: "{{ merged_admins }}"
+
+- name: 'merge unpriveledged accounts'
+  ansible.builtin.set_fact:
+    keymap: "{{ _keymap | combine( local_users ) }}"
+
+- name: 'create users and manage permissions'
+  ansible.builtin.import_role:
+    name: do1jlr.users
+
+- name: 'deploy ssh keys'
+  ansible.builtin.import_role:
+    name: do1jlr.auth
+  vars:
+    users: "{{ keymap }}"
+
+- name: 'configurate sshd'
+  ansible.builtin.import_role:
+    name: do1jlr.sshd
