@@ -1,0 +1,31 @@
+---
+default_admins:
+  - name: l3d
+    pubkeys:
+      - l3d@pinkie.l3d.yt
+      - l3d@bsns.l3d
+      - l3d@derpy.l3d.yt
+      - l3d@mobile.l3d.yt
+      - l3d@rsa_backup
+
+# Please extend wtf_admins in local_admins (same structure)
+local_admins: []
+#  - name: you
+#    pubkeys:
+#      - you@example.com
+
+# add unpriviledged users (simple list
+local_accounts: []
+#  - foo
+#  - bar
+
+# add ssh keys for login
+local_users: {}
+#  foo:
+#    - foo@example.com
+#  bar:
+#    - bar@example.com
+#    - bar@baz.example.com
+
+# run optional versionscheck (true is recomended)
+submodules_versioncheck: false
