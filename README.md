@@ -41,5 +41,5 @@ local_accounts:
 ---------------
 
 + By default, the [do1jlr.sshd](https://github.com/roles-ansible/ansible_role_sshd.git) role only allow the login of **defined users**.
-+ By default, the [do1jlr.sshd](https://github.com/roles-ansible/ansible_role_sshd.git) role only allow the **login with [ed25519](https://de.wikipedia.org/wiki/Curve25519) SSH Keys**. They can be created using ``ssh-keygen -t ed25519``.
++ By default, the [do1jlr.sshd](https://github.com/roles-ansible/ansible_role_sshd.git) role only allow the **login with [ed25519](https://de.wikipedia.org/wiki/Curve25519) SSH Keys**. Eliptic curve ssh key pairs can be created using ``ssh-keygen -t ed25519``.
 + The [do1jlr.auth](https://github.com/roles-ansible/ansible_role_auth.git) role is very picky about the filenames in which the public ssh keys must be stored. Better have a look at their readme.
