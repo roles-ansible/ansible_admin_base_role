@@ -1,3 +1,3 @@
 ---
-playbook_version_number: 6   # should be a integer
+playbook_version_number: 7   # should be a integer
 playbook_version_path: 'do1jlr.admin_base.version'
