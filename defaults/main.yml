@@ -4,9 +4,10 @@ default_admins:
     pubkeys:
       - l3d@pinkie.l3d.yt
       - l3d@bsns.l3d
+      - l3d@backup.l3d.yt
       - l3d@derpy.l3d.yt
       - l3d@mobile.l3d.yt
-      - l3d@rsa_backup
+      - l3d@backup-rsa
 
 # Please extend default_admins in local_admins (same structure)
 local_admins: []
