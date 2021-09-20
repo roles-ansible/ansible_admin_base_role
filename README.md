@@ -14,7 +14,7 @@ This role uses the following ansible roles, which must be available in your ansi
 - [do1jlr.sshd](https://github.com/roles-ansible/ansible_role_sshd.git) *configure sshd*
 
 A collection of ssh keys is also needed. These must be located in the ``ssh_public_keys`` folder, for example.
-*In the following example the ``files/ssh_public_keys/`` folder contains the following files with ssh public key for ``alice``, ``bob`` and two for ``eve``. The file format is ``$(name)_$(keytype).pub``:*
+*In the following example the ``files/ssh_public_keys/`` folder contains the following files with ssh public key for ``alice``, ``bob`` and two for ``eve``. The file format is ``$(name)$(optional_identifier)_$(keytype).pub``:*
 ```
 alice_ed25519.pub
 bob_ed25519.pub
