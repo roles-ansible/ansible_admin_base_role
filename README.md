@@ -1,3 +1,5 @@
+[![Ansible Galaxy](https://raw.githubusercontent.com/roles-ansible/ansible_admin_base_role/main/.github/galaxy.svg?sanitize=true)](https://galaxy.ansible.com/do1jlr/sshd) [![MIT License](https://raw.githubusercontent.com/roles-ansible/ansible_admin_base_role/main/.github/license.svg?sanitize=true)](https://github.com/roles-ansible/ansible_admin_base_role/blob/main/LICENSE)
+
  ansible admin base role
 ================
 
